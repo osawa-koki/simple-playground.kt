@@ -30,7 +30,7 @@ fun main(args: Array<String>) {
   val _double: Double = 10.0
 
   val _char: Char = 'A'
-  val _string: String = "aaaaa${_char}"
+  val _string: String = "$_char | ${_byte.toString()}"
   val _str_multi: String = """
     M
     u
@@ -43,5 +43,5 @@ fun main(args: Array<String>) {
     r
     d
   """.trimIndent()
-  
+
 }
