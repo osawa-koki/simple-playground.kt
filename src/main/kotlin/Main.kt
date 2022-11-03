@@ -130,5 +130,20 @@ fun main(args: Array<String>) {
     println(i)
   }
 
-  
+
+  // while式
+  // これは普通、、、
+
+  var _while_i: Int = 0
+  while (_while_i < 5) {
+    println("${_while_i++}回目です。")
+  }
+
+  // こっちも可能。
+  _while_i = 0;
+  do {
+    println("${_while_i++}回目です。")
+  } while (_while_i < 5)
+
+
 }
