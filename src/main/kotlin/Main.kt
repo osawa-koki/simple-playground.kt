@@ -17,9 +17,31 @@ fun main(args: Array<String>) {
   var b: Int = 1
   b = 2
 
+  // ===== ===== ===== ===== =====
+  // データ型
+  // ===== ===== ===== ===== =====
 
+  val _int: Int = 10
+  val _byte: Byte = 100
+  val _short: Short = 1000
+  val _long: Long = 10000L
 
+  val _float: Float = 10.0F
+  val _double: Double = 10.0
 
+  val _char: Char = 'A'
+  val _string: String = "aaaaa${_char}"
+  val _str_multi: String = """
+    M
+    u
+    l
+    t
+    i
 
-
+    W
+    i
+    r
+    d
+  """.trimIndent()
+  
 }
