@@ -44,4 +44,91 @@ fun main(args: Array<String>) {
     d
   """.trimIndent()
 
+  // ===== ===== ===== ===== =====
+  // 処理の制御
+  // ===== ===== ===== ===== =====
+
+  // if文
+
+  if (1 + 1 == 2) {
+    println("CORRECT!!!")
+  } else {
+    println("WRONG...")
+  }
+
+  // if文が式だからこんなこともできる。
+  val _if_val: String = if (1 + 1 == 2) {
+    println("yeah!!")
+    "CORRECT"
+  } else {
+    println("oh my zsh...")
+    "WRONG"
+  }
+
+  // when文
+
+  when (1) {
+    1 -> {
+      println("1です。")
+    }
+
+    2 -> {
+      println("2です、、、")
+    }
+
+    3 -> {
+      println("3かも???")
+    }
+
+    else -> {
+      println("う～～～ん、、、")
+    }
+  }
+
+  // whenも式だよ♪
+  val _when_val: String = when (1) {
+    1 -> {
+      println("1です。")
+      "No. 1"
+    }
+
+    2 -> {
+      println("2です、、、")
+      "-2-"
+    }
+
+    3 -> {
+      println("3かも???")
+      "THREE"
+    }
+
+    else -> {
+      println("う～～～ん、、、")
+      "???"
+    }
+  }
+
+  // もっと簡単に♪
+
+  val _when_val_shorthand: String = when (1) {
+    1 -> "No. 1"
+    2 -> "-2-"
+    3 -> "THREE"
+    else -> "???"
+  }
+
+
+  // ===== ===== ===== ===== =====
+  // 範囲系
+  // ===== ===== ===== ===== =====
+
+  val _range_int: IntRange = 1..10
+  for (i in _range_int) {
+    println(i)
+  }
+  for (i in _range_int step 2) {
+    println(i)
+  }
+
+  
 }
