@@ -9,5 +9,5 @@
 
 - Byte, Short, Int, Long
 - Float, Double
-- Char, 
+- Char, String
 - Boolean
