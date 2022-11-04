@@ -262,7 +262,7 @@ fun main(args: Array<String>) {
 
   // getterとsetterは、プロパティに対して定義する。
 
-
+  Advanced()
 
 }
 
