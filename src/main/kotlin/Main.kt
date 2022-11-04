@@ -200,6 +200,9 @@ fun main(args: Array<String>) {
   var person2: Person2 = Person2(email = "osawa@example.com", name = "osawa")
   println("name: ${person2.name}, email: ${person2.email}, age: ${person2.age}")
 
+  var person3: Person3 = Person3("osawa", 23)
+  println("name: ${person3.name}, email: ${person3.email}, age: ${person3.age}, namelength: ${person3.namelength}")
+
 }
 
 fun Add(a: Int, b: Int): Int {
@@ -256,6 +259,26 @@ class Person2(
 ) {
 
   var email: String = ""
+  constructor(name: String = "subname", email: String): this(name) {
+    this.email = email
+  }
+
+  fun action() {
+    println("Iam $name and $age years old...")
+  }
+}
+
+class Person3(
+  val name: String = "mainname",
+  val age: Int = 0
+) {
+
+  var email: String = ""
+  var namelength: Int = 0
+
+  init {
+    namelength = name.length
+  }
   constructor(name: String = "subname", email: String): this(name) {
     this.email = email
   }
