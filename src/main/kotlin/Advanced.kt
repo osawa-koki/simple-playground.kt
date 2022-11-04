@@ -57,6 +57,22 @@ fun Advanced() {
   Authenticate.authenticate("userA", "passwordA")
 
 
+  // ===== ===== ===== ===== =====
+  // コンパニオン
+  // ===== ===== ===== ===== =====
+
+  // コンパニオンオブジェクトは、クラスの中に定義することができる。
+  // コンパニオンオブジェクトは、クラスの中でしか使用することができない。
+  // by coplit
+
+  // 静的(static)キーワード的な役割(in Java)
+
+  var student2: Student2 = Student2("student B")
+  println("student2: ${student2.name}")
+  var student_object: Student = Student2.Companion.create("student C")
+  println("student_object: ${student_object.name}")
+
+
 }
 
 // クラスの継承
@@ -117,3 +133,30 @@ object Authenticate {
   }
 
 }
+
+// コンパニオン
+
+class Student2(val name: String) {
+
+  companion object {
+    fun create(name: String): Student {
+      println("$name created")
+      return Student(name)
+    }
+
+    // コンパニオンオブジェクト内でプロパティを定義することもできる。
+    // ただし、コンパニオンオブジェクト内でプロパティを定義すると、
+    // クラスの外からはアクセスできない。
+    // by coplit
+
+    // valは、コンパニオンオブジェクト内でのみ使用可能。
+    // by coplit
+
+    // また、原則として定数として定義する。
+    // これは、メモリの競合を防ぐためである。
+
+    const val count: Int = 0
+  }
+
+}
+
