@@ -173,7 +173,10 @@ fun main(args: Array<String>) {
   // めっちゃ普通。
 
   println(Add(1, 2))
-  
+
+  // 名前付き引数として使うこともできる。
+  println(Add(b = 5, a = 2))
+
 }
 
 fun Add(a: Int, b: Int): Int {
@@ -188,4 +191,12 @@ fun Add_(a: Int, b:Int): Int = a + b
 fun return_void() {
   return
 }
+
+
+// デフォルト値も使える。
+fun Reduce(a: Int = 5, b: Int = 2): Int {
+  return a - b
+}
+
+
 
