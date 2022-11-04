@@ -173,10 +173,7 @@ fun main(args: Array<String>) {
   // めっちゃ普通。
 
   println(Add(1, 2))
-
-
-
-
+  
 }
 
 fun Add(a: Int, b: Int): Int {
