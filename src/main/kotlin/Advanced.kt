@@ -10,6 +10,9 @@ fun Advanced() {
   student.sayHello()
   teacher.sayHello()
 
+  student.sayGoodBye()
+  teacher.sayGoodBye()
+
 }
 
 // クラスの継承
@@ -21,13 +24,33 @@ open class User(val name: String) {
   fun sayHello() {
     println("Hello, ${this.name}")
   }
+
+  // open修飾子をつけることで、オーバーライド可能であることを示す。
+  open fun sayGoodBye() {
+    println("Good bye, ${this.name}")
+  }
+
 }
 
 
 class Student(name: String): User(name) {
+  // Userクラスが保有するsayGoodByeメソッドをオーバーライドする。
+  override fun sayGoodBye() {
+    println("Good bye, ${this.name}. See you again.")
 
+    // superを使うことで、親クラスのメソッドを呼び出すことができる。
+    // これは、オーバーライドしたメソッド内でのみ使用可能。
+    super.sayGoodBye()
+  }
 }
 
 class Teacher(name: String): User(name) {
+  // Userクラスが保有するsayGoodByeメソッドをオーバーライドする。
+  override fun sayGoodBye() {
+    println("Good bye, ${this.name}. See you tomorrow.")
 
+    // superを使うことで、親クラスのメソッドを呼び出すことができる。
+    // これは、オーバーライドしたメソッド内でのみ使用可能。
+    super.sayGoodBye()
+  }
 }
