@@ -186,6 +186,14 @@ fun main(args: Array<String>) {
   println(_toplevel_val)
 
 
+  // ===== ===== ===== ===== =====
+  // クラス
+  // ===== ===== ===== ===== =====
+
+  var person: Person = Person("osawa", 23)
+  person.action()
+
+
 }
 
 fun Add(a: Int, b: Int): Int {
@@ -209,3 +217,17 @@ fun Reduce(a: Int = 5, b: Int = 2): Int {
 
 
 const val _toplevel_val: String = "Hello Kotlin..."
+
+
+// ===== ===== ===== ===== =====
+// クラス
+// ===== ===== ===== ===== =====
+
+class Person(
+  val name: String,
+  val age: Int
+) {
+  fun action() {
+    println("Iam $name and $age years old...")
+  }
+}
