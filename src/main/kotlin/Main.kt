@@ -197,6 +197,8 @@ fun main(args: Array<String>) {
   println(item.name)
   println(item.price)
 
+  var person2: Person2 = Person2(email = "osawa@example.com", name = "osawa")
+  println("name: ${person2.name}, email: ${person2.email}, age: ${person2.age}")
 
 }
 
@@ -243,6 +245,23 @@ class Item() {
   constructor(name: String, price: Int): this() {
     this.name = name
     this.price = price
+  }
+}
+
+// 少し複雑なクラス
+
+class Person2(
+  val name: String = "mainname",
+  val age: Int = 0
+) {
+
+  var email: String = ""
+  constructor(name: String = "subname", email: String): this(name) {
+    this.email = email
+  }
+
+  fun action() {
+    println("Iam $name and $age years old...")
   }
 }
 
