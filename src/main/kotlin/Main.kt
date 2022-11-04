@@ -166,4 +166,29 @@ fun main(args: Array<String>) {
     }
   }
 
+  // ===== ===== ===== ===== =====
+  // 関数
+  // ===== ===== ===== ===== =====
+
+  // めっちゃ普通。
+
+  println(Add(1, 2))
+
+
+
+
 }
+
+fun Add(a: Int, b: Int): Int {
+  return a + b
+}
+
+// 第一級的な書き方も可能。
+fun Add_(a: Int, b:Int): Int = a + b
+
+// 戻り値がない場合には「Unit」
+// void的な
+fun return_void() {
+  return
+}
+
