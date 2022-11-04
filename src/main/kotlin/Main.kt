@@ -193,6 +193,10 @@ fun main(args: Array<String>) {
   var person: Person = Person("osawa", 23)
   person.action()
 
+  val item = Item("item1", 100)
+  println(item.name)
+  println(item.price)
+
 
 }
 
@@ -231,3 +235,14 @@ class Person(
     println("Iam $name and $age years old...")
   }
 }
+
+class Item() {
+  var name: String = ""
+  var price: Int = 0
+
+  constructor(name: String, price: Int): this() {
+    this.name = name
+    this.price = price
+  }
+}
+
