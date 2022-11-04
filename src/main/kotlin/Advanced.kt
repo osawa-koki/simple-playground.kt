@@ -54,6 +54,8 @@ fun Advanced() {
   // オブジェクトキーワードはコンストラクタ引数を使用することができない。
   // by osawa
 
+  Authenticate.authenticate("userA", "passwordA")
+
 
 }
 
@@ -103,4 +105,15 @@ class Teacher(name: String): User(name) {
   }
 
   override val age: Int = 30
+}
+
+// オブジェクトキーワード
+
+object Authenticate {
+
+  fun authenticate(userName: String, password: String) {
+    println("userName: ${userName}")
+    println("password: ${password}")
+  }
+
 }
