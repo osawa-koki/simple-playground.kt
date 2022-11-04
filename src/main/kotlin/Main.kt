@@ -177,6 +177,15 @@ fun main(args: Array<String>) {
   // 名前付き引数として使うこともできる。
   println(Add(b = 5, a = 2))
 
+
+
+  // ===== ===== ===== ===== =====
+  // グローバルスコープ
+  // ===== ===== ===== ===== =====
+
+  println(_toplevel_val)
+
+
 }
 
 fun Add(a: Int, b: Int): Int {
@@ -199,4 +208,4 @@ fun Reduce(a: Int = 5, b: Int = 2): Int {
 }
 
 
-
+const val _toplevel_val: String = "Hello Kotlin..."
