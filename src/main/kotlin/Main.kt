@@ -203,6 +203,24 @@ fun main(args: Array<String>) {
   var person3: Person3 = Person3("osawa", 23)
   println("name: ${person3.name}, email: ${person3.email}, age: ${person3.age}, namelength: ${person3.namelength}")
 
+  // プライマリコンストラクタとセカンダリコンストラクタは非常に複雑
+  // 原則としてプライマリコンストラクタを採用する。
+  // セカンダリコンストラクタは、プライマリコンストラクタの引数をそのまま使う場合に使う。
+  // それ以外の場合は、プライマリコンストラクタを使う。
+  // なお、プライマリコンストラクタは、クラスの定義の中に書く。
+  // セカンダリコンストラクタは、クラスの定義の中に書く。
+  // セカンダリコンストラクタは、initブロックとして書くこともできる。
+  // セカンダリコンストラクタは、複数定義できる。
+  // セカンダリコンストラクタは、this()を使って、プライマリコンストラクタを呼び出すことができる。
+  
+
+
+  // ===== ===== ===== ===== =====
+  // データクラス
+  // ===== ===== ===== ===== =====
+
+  val course = Course(100, "Kotlin", "osawa")
+
 }
 
 fun Add(a: Int, b: Int): Int {
@@ -287,4 +305,12 @@ class Person3(
     println("Iam $name and $age years old...")
   }
 }
+
+// データクラス
+
+data class Course(
+  val id: Int,
+  val name: String,
+  val author: String
+)
 
