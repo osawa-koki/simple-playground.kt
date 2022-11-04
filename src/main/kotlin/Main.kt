@@ -150,19 +150,19 @@ fun main(args: Array<String>) {
   // これは結構便利かも。
   // 「continue」でも使えるよ♪
 
-  outerloop@ for(i in 1..5) {
+  outerloop1@ for(i in 1..5) {
     println("i -> $i")
-    innerloop@ for (j in 1..5) {
+    innerloop1@ for (j in 1..5) {
       println("j -> $j")
-      if (3 <= j) break@outerloop
+      if (3 <= j) break@outerloop1
     }
   }
 
-  outerloop@ for(i in 1..5) {
+  outerloop2@ for(i in 1..5) {
     println("i -> $i")
-    innerloop@ for (j in 1..5) {
+    innerloop2@ for (j in 1..5) {
       println("j -> $j")
-      if (3 <= j) break@innerloop
+      if (3 <= j) break@innerloop2
     }
   }
 
