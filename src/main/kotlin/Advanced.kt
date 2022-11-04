@@ -30,6 +30,10 @@ open class User(val name: String) {
     println("Good bye, ${this.name}")
   }
 
+  // メソッドだけでなく、プロパティも同様。
+
+  open val age: Int = 0
+
 }
 
 
@@ -42,6 +46,8 @@ class Student(name: String): User(name) {
     // これは、オーバーライドしたメソッド内でのみ使用可能。
     super.sayGoodBye()
   }
+
+  override val age: Int = 15
 }
 
 class Teacher(name: String): User(name) {
@@ -53,4 +59,6 @@ class Teacher(name: String): User(name) {
     // これは、オーバーライドしたメソッド内でのみ使用可能。
     super.sayGoodBye()
   }
+
+  override val age: Int = 30
 }
