@@ -146,4 +146,24 @@ fun main(args: Array<String>) {
   } while (_while_i < 5)
 
 
+  // ラベル
+  // これは結構便利かも。
+  // 「continue」でも使えるよ♪
+
+  outerloop@ for(i in 1..5) {
+    println("i -> $i")
+    innerloop@ for (j in 1..5) {
+      println("j -> $j")
+      if (3 <= j) break@outerloop
+    }
+  }
+
+  outerloop@ for(i in 1..5) {
+    println("i -> $i")
+    innerloop@ for (j in 1..5) {
+      println("j -> $j")
+      if (3 <= j) break@innerloop
+    }
+  }
+
 }
