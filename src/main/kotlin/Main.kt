@@ -250,6 +250,18 @@ fun main(args: Array<String>) {
 
   // ===== ここまで =====
 
+  // ===== ===== ===== ===== =====
+  // getterとsetter
+  // ===== ===== ===== ===== =====
+
+  var item2_1: Item2 = Item2("item2", 200)
+  var item2_2: Item2 = Item2("item2", -100)
+
+  println("name: ${item2_1.name}, price: ${item2_1.price}")
+  println("name: ${item2_2.name}, price: ${item2_2.price}") // priceが0になる。
+
+  // getterとsetterは、プロパティに対して定義する。
+
 
 
 }
@@ -345,3 +357,33 @@ data class Course(
   val author: String
 )
 
+
+// setterとgetter
+
+class Item2() {
+  var name: String = ""
+    get() {
+      return field
+    }
+    set(value) {
+      field = value
+    }
+  var price: Int = 0
+    get() {
+      println("getter called")
+      return field
+    }
+    set(value) {
+      println("setter called")
+      if (value < 0) {
+        field = 0
+      } else {
+        field = value
+      }
+    }
+
+  constructor(name: String, price: Int): this() {
+    this.name = name
+    this.price = price
+  }
+}
