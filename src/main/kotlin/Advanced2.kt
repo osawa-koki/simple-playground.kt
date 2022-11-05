@@ -65,7 +65,29 @@ fun CollectionStudy() {
   val divLambda: (Int, Int) -> Int = { x: Int, y: Int -> x / y }
   println("higherOrderFunc1: ${higherOrderFunc1(1, 2, divLambda)}")
 
-  
 
+  // ===== ===== ===== ===== =====
+  // コレクション操作
+  // ===== ===== ===== ===== =====
+
+
+  val numList = listOf<Int>(1, 2, 3, 4, 5)
+  val numList_under_3 = numList.filter { it < 3 }
+  println("numList_under_3: ${numList_under_3}")
+
+  val numList_under_3_times_2 = numList_under_3.map { it * 2 }
+  println("numList_under_3_times_2: ${numList_under_3_times_2}")
+
+  val numList_under_3_times_2_sum = numList_under_3_times_2.sum()
+  println("numList_under_3_times_2_sum: ${numList_under_3_times_2_sum}")
+
+  val numList_under_3_times_2_sum_div_2 = numList_under_3_times_2_sum / 2
+  println("numList_under_3_times_2_sum_div_2: ${numList_under_3_times_2_sum_div_2}")
+
+  // by coplit
+
+  numList.forEach {
+    println("numList.map: ${it}")
+  }
 
 }
