@@ -214,3 +214,18 @@ class AB: A, B {
 }
 
 
+// アクセス修飾子
+
+class AccessModifier {
+  // public: どこからでもアクセス可能。
+  // internal: 同一モジュール内からのみアクセス可能。
+  // protected: 同一ファイル内、またはサブクラスからのみアクセス可能。
+  // private: 同一ファイル内からのみアクセス可能。
+  // by coplit
+
+  public val _public: String = "public"
+  internal val _internal: String = "internal"
+  protected val _protected: String = "protected"
+  private val _private: String = "private"
+}
+
