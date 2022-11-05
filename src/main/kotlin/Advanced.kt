@@ -146,6 +146,32 @@ fun Advanced() {
   println(1.toChar())
 
 
+  // ===== ===== ===== ===== =====
+  // ナル許容型
+  // ===== ===== ===== ===== =====
+
+  // ナル許容型は、データ型の後に「?」を付けることで、
+  // nullを許容することができる。
+  // by coplit
+
+  // ナル許容型は、データ型の後に「!!」を付けることで、
+  // nullでないことを確認することができる。
+  // by coplit
+
+  // ナル許容型は、データ型の後に「?:」を付けることで、
+  // nullの場合に、デフォルト値を設定することができる。
+  // by coplit
+
+  var nameNullable: String? = null
+  println("nameNullable: ${nameNullable}")
+  println("nameNullable: ${nameNullable?.length}") // safe operator
+  println("nameNullable: ${nameNullable?.length ?: 0}") // safe operator | エルビス演算子 (C#でいう「??」)
+
+  var nameNotNull: String = nameNullable!!
+  println("nameNotNull: ${nameNotNull}")
+
+
+
 }
 
 // クラスの継承
@@ -311,3 +337,18 @@ fun checkType(type: Any) {
     }
   }
 }
+
+// 列挙型
+
+enum class Color {
+  RED, GREEN, BLUE
+}
+
+enum class Color2(val r: Int, val g: Int, val b: Int) {
+  RED(255, 0, 0),
+  GREEN(0, 255, 0),
+  BLUE(0, 0, 255)
+}
+
+
+
