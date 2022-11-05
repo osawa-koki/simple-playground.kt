@@ -32,7 +32,15 @@ fun CollectionStudy() {
 
   // by coplit
 
+  // ===== ===== ===== ===== =====
+  // ラムダ
+  // ===== ===== ===== ===== =====
 
+  val addLambda: (Int, Int) -> Int = { x: Int, y: Int -> x + y }
+  println("addLambda: ${addLambda(1, 2)}")
+
+  // これは普通、、、
+  // 他の言語とほとんど同じ。
 
 
 }
