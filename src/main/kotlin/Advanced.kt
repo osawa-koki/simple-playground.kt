@@ -133,6 +133,19 @@ fun Advanced() {
 
   // 上記全てcoplitにより生成
 
+  // 「as」句を使用して データ型を変換すると、コンパイルエラーになることがある。
+  // その場合は、データ型を変換する前に、
+  // データ型を確認する必要がある。
+
+  // もしくは、専用のメソッドを使用して型を変換する。
+  println(1.toDouble())
+  println(1.toFloat())
+  println(1.toLong())
+  println(1.toShort())
+  println(1.toByte())
+  println(1.toChar())
+
+
 }
 
 // クラスの継承
