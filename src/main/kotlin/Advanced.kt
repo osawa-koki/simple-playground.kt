@@ -73,6 +73,24 @@ fun Advanced() {
   println("student_object: ${student_object.name}")
 
 
+  // ===== ===== ===== ===== =====
+  // インターフェース
+  // ===== ===== ===== ===== =====
+
+  var courseRepo = CourseRepositoryImpl()
+  var cource = courseRepo.getById(1)
+
+  // インターフェースは、クラスのように、
+  // メソッドやプロパティを持つことができる。
+  // また、インターフェースは、
+  // クラスのように、継承することができる。
+  // by coplit
+
+  // クラスは複数のインターフェースを継承することができる。
+  // しかしながら、クラスは、一つのクラスしか継承することができない。
+  // by coplit
+
+
 }
 
 // クラスの継承
@@ -159,4 +177,18 @@ class Student2(val name: String) {
   }
 
 }
+
+// インターフェース
+
+interface CourseRepository {
+  fun getById(id: Int): Course
+}
+
+class CourseRepositoryImpl: CourseRepository {
+  override fun getById(id: Int): Course {
+    return Course(id, "course A", "Osawa")
+  }
+}
+
+
 
