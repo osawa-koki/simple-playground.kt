@@ -111,7 +111,6 @@ fun CollectionStudy() {
   cats.forEach({
     println("cats.forEach: ${it.name}")
   })
-
   
 
 }
