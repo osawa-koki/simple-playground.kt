@@ -191,4 +191,26 @@ class CourseRepositoryImpl: CourseRepository {
 }
 
 
+interface A {
+  fun doSomething() {
+    println("dosomething A")
+  }
+}
+
+interface B {
+  fun doSomething() {
+    println("dosomething B")
+  }
+}
+
+class AB: A, B {
+  override fun doSomething() {
+    // super<型>とすることで特定の継承もとのメンバにアクセスすることができる。
+
+    super<A>.doSomething()
+    super<B>.doSomething()
+    println("dosomething AB")
+  }
+}
+
 
