@@ -43,4 +43,29 @@ fun CollectionStudy() {
   // 他の言語とほとんど同じ。
 
 
+  // ===== ===== ===== ===== =====
+  // 高階関数
+  // ===== ===== ===== ===== =====
+
+  // 関数を引数に取る関数
+  fun higherOrderFunc1(x: Int, y: Int, f: (Int, Int) -> Int): Int {
+    return f(x, y)
+  }
+  println("higherOrderFunc1: ${higherOrderFunc1(1, 2, addLambda)}")
+
+  // 一応引き算もやってみる。
+  val subLambda: (Int, Int) -> Int = { x: Int, y: Int -> x - y }
+  println("higherOrderFunc1: ${higherOrderFunc1(1, 2, subLambda)}")
+
+  // 今度は掛け算
+  val mulLambda: (Int, Int) -> Int = { x: Int, y: Int -> x * y }
+  println("higherOrderFunc1: ${higherOrderFunc1(1, 2, mulLambda)}")
+
+  // そして割り算
+  val divLambda: (Int, Int) -> Int = { x: Int, y: Int -> x / y }
+  println("higherOrderFunc1: ${higherOrderFunc1(1, 2, divLambda)}")
+
+  
+
+
 }
