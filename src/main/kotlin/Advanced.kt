@@ -174,8 +174,8 @@ fun Advanced() {
   nameNullable?.run {
     println("nameNullable: ${nameNullable!!}")
   }
-  
 
+  CollectionStudy()
 }
 
 // クラスの継承
