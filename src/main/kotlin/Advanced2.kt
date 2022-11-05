@@ -90,4 +90,17 @@ fun CollectionStudy() {
     println("numList.map: ${it}")
   }
 
+  // フラットマップ
+
+  val flat_map = listOf(listOf(1, 2, 3), listOf(4, 5, 6))
+  println("flat_map: ${flat_map}")
+
+  val flat_map_flat = flat_map.flatten()
+  println("flat_map_flat: ${flat_map_flat}")
+
+  // by coplit
+
+
+
+
 }
