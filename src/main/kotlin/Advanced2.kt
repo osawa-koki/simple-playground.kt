@@ -100,7 +100,24 @@ fun CollectionStudy() {
 
   // by coplit
 
+  val cat1 = Cat("Tama", 3)
+  val cat2 = Cat("Mimi", 5)
+  val cat3 = Cat("Kuro", 1)
+  val cat4 = Cat("Shiro", 2)
+  val cat5 = Cat("Pochi", 4)
 
+  val cats = listOf(cat1, cat2, cat3, cat4, cat5)
 
+  cats.forEach({
+    println("cats.forEach: ${it.name}")
+  })
+
+  
 
 }
+
+class Cat(
+  val name: String,
+  val age: Int
+)
+
