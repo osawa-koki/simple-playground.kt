@@ -61,4 +61,36 @@ fun main() {
   fun printHello_() {
     println("Hello")
   }
+
+  // ================================
+
+  // デフォルト引数を使用することができます。
+  fun printHello2(name: String = "World") {
+    println("Hello, $name")
+  }
+
+  printHello2()
+
+  // ================================
+
+  // 引数に「vararg」をつけると、
+  // 可変長引数を定義することができます。
+  fun printHello3(vararg names: String) {
+    for (name in names) {
+      println("Hello, $name")
+    }
+  }
+
+  printHello3("Alice", "Bob", "Carol")
+
+  // ================================
+
+  // 名前付き引数を使用することができます。
+  fun printHello4(name: String, age: Int) {
+    println("Hello, $name")
+    println("You are $age years old")
+  }
+
+  printHello4(name = "Alice", age = 20)
+  printHello4(age = 20, name = "Alice")
 }
