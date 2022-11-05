@@ -167,10 +167,14 @@ fun Advanced() {
   println("nameNullable: ${nameNullable?.length}") // safe operator
   println("nameNullable: ${nameNullable?.length ?: 0}") // safe operator | エルビス演算子 (C#でいう「??」)
 
-  var nameNotNull: String = nameNullable!!
-  println("nameNotNull: ${nameNotNull}")
+//  var nameNotNull: String = nameNullable!!
+//  println("nameNotNull: ${nameNotNull}")
 
-
+  // nullの場合にのみ実行される。
+  nameNullable?.run {
+    println("nameNullable: ${nameNullable!!}")
+  }
+  
 
 }
 
