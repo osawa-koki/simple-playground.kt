@@ -1,4 +1,3 @@
-
 fun Advanced() {
 
 
@@ -91,6 +90,49 @@ fun Advanced() {
   // by coplit
 
 
+  // ===== ===== ===== ===== =====
+  // データ型
+  // ===== ===== ===== ===== =====
+
+  // データ型は「is」キーワードを使用して、確認ができる。
+  // Javaでいう「instance of」に該当する。
+
+  // データ型は「as」キーワードを使用して変換することができる。
+  // Javaでいう「キャスト」に該当する。
+
+  // データ型は「!!」キーワードを使用して、
+  // nullでないことを確認することができる。
+  // Javaでいう「nullチェック」に該当する。
+  // by coplit
+
+  // データ型は「?:」キーワードを使用して、
+  // nullの場合に、デフォルト値を設定することができる。
+
+  val a: Any = "Hello"
+  println(a is String)
+  println(a is Int)
+  println(a is Double)
+  println(a is Boolean)
+  println(a is Float)
+  println(a is Long)
+  println(a is Short)
+  println(a is Byte)
+  println(a is Char)
+
+  when (a) {
+    is String -> println("a is String")
+    is Int -> println("a is Int")
+    is Double -> println("a is Double")
+    is Boolean -> println("a is Boolean")
+    is Float -> println("a is Float")
+    is Long -> println("a is Long")
+    is Short -> println("a is Short")
+    is Byte -> println("a is Byte")
+    is Char -> println("a is Char")
+  }
+
+  // 上記全てcoplitにより生成
+
 }
 
 // クラスの継承
@@ -115,7 +157,7 @@ open class User(val name: String) {
 }
 
 
-class Student(name: String): User(name) {
+class Student(name: String) : User(name) {
   // Userクラスが保有するsayGoodByeメソッドをオーバーライドする。
   override fun sayGoodBye() {
     println("Good bye, ${this.name}. See you again.")
@@ -128,7 +170,7 @@ class Student(name: String): User(name) {
   override val age: Int = 15
 }
 
-class Teacher(name: String): User(name) {
+class Teacher(name: String) : User(name) {
   // Userクラスが保有するsayGoodByeメソッドをオーバーライドする。
   override fun sayGoodBye() {
     println("Good bye, ${this.name}. See you tomorrow.")
@@ -184,7 +226,7 @@ interface CourseRepository {
   fun getById(id: Int): Course
 }
 
-class CourseRepositoryImpl: CourseRepository {
+class CourseRepositoryImpl : CourseRepository {
   override fun getById(id: Int): Course {
     return Course(id, "course A", "Osawa")
   }
@@ -203,7 +245,7 @@ interface B {
   }
 }
 
-class AB: A, B {
+class AB : A, B {
   override fun doSomething() {
     // super<型>とすることで特定の継承もとのメンバにアクセスすることができる。
 
@@ -229,3 +271,30 @@ class AccessModifier {
   private val _private: String = "private"
 }
 
+// データ型とwhen句
+// スマートキャスト
+
+fun checkType(type: Any) {
+  when (type) {
+    is Course -> {
+      // typeはAny型として受け取ったのにも関わらず、
+      // 強力な型推論により、Course型として扱うことができる。
+      println(type.id)
+      println(type.name)
+      println(type.author)
+    }
+    is CourseRepository -> {
+      // typeはAny型として受け取ったのにも関わらず、
+      // 強力な型推論により、CourseRepository型として扱うことができる。
+      println(type.getById(1))
+    }
+    is CourseRepositoryImpl -> {
+      // typeはAny型として受け取ったのにも関わらず、
+      // 強力な型推論により、CourseRepositoryImpl型として扱うことができる。
+      println(type.getById(1))
+    }
+    else -> {
+      println("unknown type")
+    }
+  }
+}
