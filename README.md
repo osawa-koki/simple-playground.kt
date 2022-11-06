@@ -1,8 +1,16 @@
 # simple-playground.kt
 
-Kotlinのお勉強プロジェクト。  
-LINEがJavaで構成されているっていうから、POLYLINEはKotlinで構成したい。  
-※ [LINE公式ブログ](https://line-hr.jp/archives/46814126.html)より。  
+Kotlinの学習用プロジェクト。  
+各章ごとにパッケージを分けているため、それぞれの機能ごとに調査実行をすることができます。  
+対象ディレクトリは「src/main/kotlin」配下にあります。  
+
+## 環境情報
+
+| 機能 | バージョン |
+| ---- | ---- |
+| java version | 1.8.0_351 |
+| Java(TM) SE Runtime Environment | (build 1.8.0_351-b10) |
+| Java HotSpot(TM) Client VM | (build 25.351-b10, mixed mode) |
 
 ## 参考文献
 
